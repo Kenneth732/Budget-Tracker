@@ -85,3 +85,52 @@ function addEntry() {
     valueInput.value = '';
     descriptionInput.focus();
 }
+
+// Function to delete an entry from the tracker
+function deleteEntry(id) {
+    const isDeleted = tracker.deleteEntry(id);
+    if (isDeleted) {
+        const itemElement = document.getElementById(`item-${id}`);
+        itemElement.parentNode.removeChild(itemElement);
+        updateBudgetUI();
+    }
+}
+
+// Function to create an item element
+function createItemElement(entry) {
+    const itemElement = document.createElement('div');
+    itemElement.className = 'item clearfix';
+    itemElement.id = `item-${entry.id}`;
+
+    const descriptionElement = document.createElement('div');
+    descriptionElement.className = 'item__description';
+    descriptionElement.textContent = entry.description;
+    itemElement.appendChild(descriptionElement);
+
+    const valueElement = document.createElement('div');
+    valueElement.className = 'item__value';
+    valueElement.textContent = entry.getFormattedValue();
+    itemElement.appendChild(valueElement);
+
+    const deleteElement = document.createElement('div');
+    deleteElement.className = 'item__delete';
+    itemElement.appendChild(deleteElement);
+
+    const deleteButton = document.createElement('button');
+    deleteButton.className = 'item__delete--btn';
+    deleteButton.textContent = 'X';
+    deleteButton.addEventListener('click', () => deleteEntry(entry.id));
+    deleteElement.appendChild(deleteButton);
+
+    itemList.appendChild(itemElement);
+}
+
+// Event listener for add button click
+addButton.addEventListener('click', addEntry);
+
+// Event listener for Enter key press in value input
+valueInput.addEventListener('keypress', event => {
+    if (event.key === 'Enter') {
+        addEntry();
+    }
+});
