@@ -21,3 +21,18 @@ FinanceTracker.prototype.deleteEntry = function (id) {
     }
     return false;
 };
+
+// add method for getEntry
+FinanceTracker.prototype.getEntries = function () {
+    return this.entries;
+};
+function Finance(type, description, value) {
+    this.type = type;
+    this.description = description;
+    this.value = value;
+}
+
+Finance.prototype.getFormattedValue = function () {
+    const sign = this.type === 'income' ? '+' : '-';
+    return `${sign}$${this.value.toFixed(2)}`;
+};
