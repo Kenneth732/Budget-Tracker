@@ -66,3 +66,22 @@ function updateBudgetUI() {
     expensesValue.textContent = `-$${expenses.toFixed(2)}`;
     totalValue.textContent = budget >= 0 ? `+$${budget.toFixed(2)}` : `-$${Math.abs(budget).toFixed(2)}`;
 }
+
+// Function to add a new entry to the tracker
+function addEntry() {
+    const type = typeSelect.value;
+    const description = descriptionInput.value;
+    const value = parseFloat(valueInput.value);
+
+    if (!description || isNaN(value) || value <= 0) {
+        return;
+    }
+
+    const entry = tracker.addEntry(type, description, value);
+    createItemElement(entry);
+    updateBudgetUI();
+
+    descriptionInput.value = '';
+    valueInput.value = '';
+    descriptionInput.focus();
+}
