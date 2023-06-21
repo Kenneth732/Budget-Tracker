@@ -39,3 +39,13 @@ Finance.prototype.getFormattedValue = function () {
 
 // Create a new instance of FinanceTracker
 const tracker = new FinanceTracker();
+
+// DOM elements
+const incomeValue = document.querySelector('.budget__income-value');
+const expensesValue = document.querySelector('.budget__expenses-value');
+const totalValue = document.querySelector('.budget__total-value');
+const typeSelect = document.querySelector('.add__type');
+const descriptionInput = document.querySelector('.add__description');
+const valueInput = document.querySelector('.add__value');
+const addButton = document.querySelector('.add__btn');
+const itemList = document.querySelector('.item-list');
