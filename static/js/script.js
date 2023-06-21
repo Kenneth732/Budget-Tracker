@@ -36,3 +36,6 @@ Finance.prototype.getFormattedValue = function () {
     const sign = this.type === 'income' ? '+' : '-';
     return `${sign}$${this.value.toFixed(2)}`;
 };
+
+// Create a new instance of FinanceTracker
+const tracker = new FinanceTracker();
