@@ -49,3 +49,20 @@ const descriptionInput = document.querySelector('.add__description');
 const valueInput = document.querySelector('.add__value');
 const addButton = document.querySelector('.add__btn');
 const itemList = document.querySelector('.item-list');
+
+// Function to update the budget UI
+function updateBudgetUI() {
+    const incomes = tracker.entries
+        .filter(entry => entry.type === 'income')
+        .reduce((sum, entry) => sum + parseFloat(entry.value), 0);
+
+    const expenses = tracker.entries
+        .filter(entry => entry.type === 'expense')
+        .reduce((sum, entry) => sum + parseFloat(entry.value), 0);
+
+    const budget = incomes - expenses;
+
+    incomeValue.textContent = `+$${incomes.toFixed(2)}`;
+    expensesValue.textContent = `-$${expenses.toFixed(2)}`;
+    totalValue.textContent = budget >= 0 ? `+$${budget.toFixed(2)}` : `-$${Math.abs(budget).toFixed(2)}`;
+}
