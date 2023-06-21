@@ -1,0 +1,119 @@
+/* Custom styles for Budget Tracker */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-top: 0;
+  color: #333333;
+}
+
+.budget {
+  margin-bottom: 20px;
+}
+
+.budget__income,
+.budget__expenses,
+.budget__total {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 3px;
+}
+
+.budget__income-text,
+.budget__expenses-text,
+.budget__total-text {
+  font-weight: bold;
+}
+
+.add {
+  margin-bottom: 20px;
+}
+
+.add__container {
+  display: flex;
+  align-items: center;
+}
+
+.add__type {
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  border-radius: 3px;
+}
+
+.add__description,
+.add__value {
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+.add__btn {
+  padding: 8px 15px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.add__btn:hover {
+  background-color: #45a049;
+}
+
+.item-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.item__description {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.item__value {
+  font-weight: bold;
+}
+
+.item__delete--btn {
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: #e53935;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.item__delete--btn:hover {
+  background-color: #c62828;
+}
